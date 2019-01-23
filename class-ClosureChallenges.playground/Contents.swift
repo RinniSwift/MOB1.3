@@ -8,6 +8,7 @@ var printThis: () -> () = {
 }
 printThis()
 
+
 /*
  2. Write a closure that takes two integers and returns the sum of the integers. Assign the closure to a variable and then call the closure. The closure can be written in a few different ways. Experiment and try 2 ways.
  */
@@ -23,10 +24,12 @@ let addSec = sumSec(4, 5)
 /*
  3. Write a closure that returns the value 42, without assigning the closure to a variable. Immediately call the closure and also ignore the return value from the closure.
  */
-var return42: () -> Int = {
-    return 42
+func return42(closure: () -> ()) {
+    closure()
 }
-return42()
+return42(closure: {
+    return 42
+})
 
 
 /*
