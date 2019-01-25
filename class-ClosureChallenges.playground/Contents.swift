@@ -52,3 +52,45 @@ func returnClosure(mes: String) -> () {
 }
 let message = "This is an important message"
 returnClosure(mes: message)
+
+
+
+
+
+
+
+func flyAway(finalStage: String) {
+    print("\(finalStage) emerged, flying away... ")
+}
+
+// this is a non-escaping closure.
+
+// non escaping, escaping(asynchronous block and storing in a property)
+
+// to use an escaping closure, you create a variable with the completion type and equal it to { _ in return }
+// set the completion to @escaping to tell us that we want to use an escaping function
+// and set the variable we created to the completion
+
+
+func metamorphosis(initialStage:String, completion: @escaping (String) -> Void) {
+    print("Caterpillar creates cocoon.")
+    // They stay inside for up to 21 days.
+    for _ in 1...21 {
+        print("\(initialStage) inside cocoon")
+    }
+    
+    DispatchQueue.main.async {
+        completion("🦋")
+    }
+}
+
+
+
+metamorphosis(initialStage:"🐛", completion: flyAway)
+
+// OR
+
+metamorphosis(initialStage: "🐛") { (finalStage) in
+    print("\(finalStage) emerged, flying away... ")
+}
+
