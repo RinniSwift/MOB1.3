@@ -5,3 +5,12 @@
 *The above file demonstrates:*
 1. passing information from source view controller to destination view controller using a completion handler
 
+## [tutorial_closures-master](https://github.com/RinniSwift/MOB1.3/tree/master/tutorial_closures-master)
+*The above file demonstrates:*
+1. passing information from source view controller to destination view controller using a delegate
+
+## [ProtocolsAndDelegates.playground](https://github.com/RinniSwift/MOB1.3/blob/master/ProtocolsAndDelegates.playground/Contents.swift)
+*The above file demonstrates:*
+1. difference between delegates, delegators, and protocols
+2. how to label delegates, delegators, and protocols in your projects
+3. instructions on how to create/use a delegate in your project
