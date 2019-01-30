@@ -2,7 +2,7 @@
 
 ## Class
 **[class-ClosureChallenges](https://github.com/RinniSwift/MOB1.3/blob/master/class-ClosureChallenges.playground/Contents.swift)**
-Class work on functions and closures (Jan.22)
+*Class work on functions and closures (Jan.22)*
 1. creating a closure
 2. creating a function that passes into the sort method
 3. creating an escaping and non escaping closure
