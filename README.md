@@ -8,6 +8,11 @@
 3. creating an escaping and non escaping closure
 4. ways to create escaping closures: asynchronous block and storing in a property
 
+**[pom-starter-master](https://github.com/RinniSwift/MOB1.3/tree/master/pom-starter-master)**
+*Communication patterns (Jan.31)*
+1. implementing target-action pattern for event handling
+2. notifications with Notification Center
+
 ## [delegates-starter-master](https://github.com/RinniSwift/MOB1.3/tree/master/delegates-starter-master)
 *The above file demonstrates:*
 1. passing information from source view controller to destination view controller using a completion handler
