@@ -14,10 +14,15 @@ class ViewController: UIViewController {
     //   1. Pomodoro: working on a task for 25 minutes without interruptions
     //   2. Break: 5 minutes
     
+    
+    var pauseButtonActivated = false
+    
+    
     enum IntervalType {
         case Pomodoro
         case Break
     }
+    
     
     // Array of intervals that make up one session specifying if it's a break or pomodoro
     let intervals: [IntervalType] = [.Pomodoro,.Break,.Pomodoro,.Break,.Pomodoro,.Break,.Pomodoro]
@@ -37,10 +42,10 @@ class ViewController: UIViewController {
     //UI
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet var tomatoImages: [UIImageView]!
     @IBOutlet weak var startPauseButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet var tomatoInImages: [UIImageView]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +63,8 @@ class ViewController: UIViewController {
 
     func updateTomatoes(to tomatoes: Int) {
         var currentTomato = 1
-        for tomatoIcon in tomatoImages {
+        
+        for tomatoIcon in tomatoInImages {
             tomatoIcon.alpha = currentTomato <= tomatoes ? 1.0 : 0.2
             currentTomato += 1
         }
@@ -74,35 +80,40 @@ class ViewController: UIViewController {
     // MARK: Button Actions
     
     @objc func startPauseButtonPressed(_ sender: UIButton) {
+        
+        
+        if pauseButtonActivated == false {
+            pauseButtonActivated = true
+        } else {
+            pauseButtonActivated = false
+        }
+        
+        
         if timer.isValid {
          // Timer running
          // ACTION: Change the button’s title to “Continue”
-            sender.titleLabel?.text = "Continue"
+//            sender.titleLabel?.text = "Continue"
+            sender.setTitle("Continue", for: .normal)
          // ACTION: Enable the reset button
-            resetButton.isEnabled = true
+            resetButton.isEnabled = false
          // ACTION: Pause the timer, call the method pauseTimer
             pauseTimer()
-            
-           
         } else {
          // Timer stopped or hasn't started
          // ACTION: Change the button’s title to “Pause”
-            sender.titleLabel?.text = "Pause"
+//            sender.titleLabel?.text = "Pause"
+            sender.setTitle("Pause", for: .normal)
          // ACTION: Disable the Reset button
-            resetButton.isEnabled = false
-            
-           
-            
+            resetButton.isEnabled = true
             if currentInterval == 0 && timeRemaining == pomodoroDuration {
                 // We are at the start of a cycle
                 // ACTION: begin the cycle of intervals
-                startTimer()
+                startNextInterval()
                 
             } else {
                 // We are in the middle of a cycle
                 // ACTION: Resume the timer.
-                
-                
+                runTimer()
             }
         }
     }
@@ -128,7 +139,7 @@ class ViewController: UIViewController {
     
     func startTimer() {
         //ACTION: create the timer, selector should be runTimer()
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runTimer), userInfo: nil, repeats: true)
         
     }
     
@@ -143,8 +154,11 @@ class ViewController: UIViewController {
     }
     
     func pauseTimer() {
-        timer.invalidate()
-        messageLabel.text = "Paused"
+        if pauseButtonActivated == false {
+            timer.invalidate()
+            messageLabel.text = "Paused"
+        }
+    
     }
     
     func resetAll() {
@@ -175,9 +189,8 @@ class ViewController: UIViewController {
             }
             
             updateTime()
-//            startTimer()
+            startTimer()
             currentInterval += 1
-            
         } else {
             // If all intervals are complete, reset all.
             // ACTION: Post Notification

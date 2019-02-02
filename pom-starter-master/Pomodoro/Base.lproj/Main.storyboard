@@ -182,10 +182,10 @@
                         <outlet property="resetButton" destination="Thw-yE-HTz" id="s3J-Hi-qoe"/>
                         <outlet property="startPauseButton" destination="5fA-Fc-Q6h" id="u71-fL-pLp"/>
                         <outlet property="timeLabel" destination="Sj7-wG-EYT" id="R5X-jj-uKh"/>
-                        <outletCollection property="tomatoImages" destination="hml-bc-mf6" collectionClass="NSMutableArray" id="WFv-58-qkN"/>
-                        <outletCollection property="tomatoImages" destination="dH1-23-4NJ" collectionClass="NSMutableArray" id="xC7-Sj-K3N"/>
-                        <outletCollection property="tomatoImages" destination="eZD-RL-5vi" collectionClass="NSMutableArray" id="WcH-ke-vSd"/>
-                        <outletCollection property="tomatoImages" destination="Cx8-45-xyc" collectionClass="NSMutableArray" id="xxi-xl-u03"/>
+                        <outletCollection property="tomatoInImages" destination="hml-bc-mf6" collectionClass="NSMutableArray" id="L4Q-h2-gUZ"/>
+                        <outletCollection property="tomatoInImages" destination="dH1-23-4NJ" collectionClass="NSMutableArray" id="7XX-Vc-6wG"/>
+                        <outletCollection property="tomatoInImages" destination="eZD-RL-5vi" collectionClass="NSMutableArray" id="l2W-Xl-5BN"/>
+                        <outletCollection property="tomatoInImages" destination="Cx8-45-xyc" collectionClass="NSMutableArray" id="aCI-YD-8UM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -212,6 +212,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tomato" width="89" height="91"/>
+        <image name="tomato" width="44" height="45"/>
     </resources>
 </document>
