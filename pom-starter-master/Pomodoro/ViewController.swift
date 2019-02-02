@@ -15,8 +15,7 @@ class ViewController: UIViewController {
     //   2. Break: 5 minutes
     
     
-    var pauseButtonActivated = false
-    
+    var pauseButton = false
     
     enum IntervalType {
         case Pomodoro
@@ -81,39 +80,43 @@ class ViewController: UIViewController {
     
     @objc func startPauseButtonPressed(_ sender: UIButton) {
         
-        
-        if pauseButtonActivated == false {
-            pauseButtonActivated = true
+        if pauseButton == false {
+            pauseButton = true
+            print("pauseButton is true")
         } else {
-            pauseButtonActivated = false
+            pauseButton = false
+            print("pauseButton is false")
         }
-        
-        
+    
         if timer.isValid {
          // Timer running
          // ACTION: Change the button’s title to “Continue”
-//            sender.titleLabel?.text = "Continue"
-            sender.setTitle("Continue", for: .normal)
          // ACTION: Enable the reset button
-            resetButton.isEnabled = false
          // ACTION: Pause the timer, call the method pauseTimer
+            
+            sender.setTitle("Continue", for: .normal)
+            resetButton.isEnabled = true
             pauseTimer()
+            
         } else {
          // Timer stopped or hasn't started
          // ACTION: Change the button’s title to “Pause”
-//            sender.titleLabel?.text = "Pause"
-            sender.setTitle("Pause", for: .normal)
          // ACTION: Disable the Reset button
-            resetButton.isEnabled = true
+            
+            sender.setTitle("Pause", for: .normal)
+            resetButton.isEnabled = false
+            resetMessageLabel()
+            
             if currentInterval == 0 && timeRemaining == pomodoroDuration {
                 // We are at the start of a cycle
                 // ACTION: begin the cycle of intervals
-                startNextInterval()
+                startTimer()
                 
             } else {
                 // We are in the middle of a cycle
                 // ACTION: Resume the timer.
-                runTimer()
+                startTimer()
+                
             }
         }
     }
@@ -154,12 +157,25 @@ class ViewController: UIViewController {
     }
     
     func pauseTimer() {
-        if pauseButtonActivated == false {
-            timer.invalidate()
-            messageLabel.text = "Paused"
-        }
-    
+        timer.invalidate()
+        messageLabel.text = "Paused"
+        
     }
+    
+    // ********
+    func resetMessageLabel() {
+        if intervals[currentInterval] == .Pomodoro {
+            
+            if currentInterval < 1 {
+                messageLabel.text = "Ready to work."
+            } else {
+                messageLabel.text = "Taking a break."
+            }
+        } else {
+            messageLabel.text = "Pomodoro session. Do not disturb."
+        }
+    }
+    
     
     func resetAll() {
         currentInterval = 0
