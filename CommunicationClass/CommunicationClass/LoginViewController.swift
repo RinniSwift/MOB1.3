@@ -23,7 +23,6 @@ class LoginViewController: UIViewController {
     
     @objc func loginButtonPressed(sender: LoginButton){
         print(sender.dict)
-        
     }
 }
 

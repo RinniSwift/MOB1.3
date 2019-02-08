@@ -33,3 +33,19 @@ var reversedNames = names.sorted(by: backward)
 
 let numbers = [2, 5, 1, 0, 9]
 var sortedNum = numbers.sorted(by: back)
+
+/*
+ 
+ closures only capture elements inside the closure.
+ 
+ non-escaping closures
+    they are non-escaping by default
+    must be executed when called
+    lifestyle has 4 cycles
+ 
+ escaping closures
+    it will be stored somehow
+    more prone to retain cycles
+    they are escaping when you store it in a property or an asynchronous block
+ 
+ */

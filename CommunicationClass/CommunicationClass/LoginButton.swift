@@ -12,7 +12,6 @@ class LoginButton: UIButton {
 
     var dict = [String: Any]()
     
-    // OR
     /*
     var dicts: Dictionary<String, Any> = [:]
     */
