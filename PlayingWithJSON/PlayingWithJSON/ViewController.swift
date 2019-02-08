@@ -38,7 +38,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if let data = contents,
                 let festivalsFromJSON = try? decoder.decode([Festivall].self, from: data) {
                 festivals = festivalsFromJSON
-//                print(festivals)
+                for fest in festivals {
+                    print(fest.date)
+                }
             }
         }
         
@@ -51,11 +53,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "festivalCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "festivalCell", for: indexPath) as! FestivalDataTableViewCell
         let fest = festivals[indexPath.row]
         print(fest)
-        cell.textLabel?.text = fest.name
+        cell.festivalNameLabel.text = fest.name
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        cell.festivalDate.text = formatter.string(from: fest.date)
+        
         return cell
+        
     }
 
 }
