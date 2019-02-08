@@ -13,6 +13,12 @@
 1. implementing target-action pattern for event handling
 2. notifications with Notification Center
 
+**[PLayingWithJSON](https://github.com/RinniSwift/MOB1.3/tree/master/PlayingWithJSON/PlayingWithJSON)**
+*Working with JSON data (Feb.7)*
+1. read JSON data from a file
+2. serializing a programs internal data structure into some kind of interchange formate using decode and encode
+3. creating types conformin to the Codeable protocol (this allows us to create an encoder and decoder)
+
 ## [delegates-starter-master](https://github.com/RinniSwift/MOB1.3/tree/master/delegates-starter-master)
 *The above file demonstrates:*
 1. passing information from source view controller to destination view controller using a completion handler
