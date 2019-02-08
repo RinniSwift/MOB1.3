@@ -13,7 +13,7 @@
 1. implementing target-action pattern for event handling
 2. notifications with Notification Center
 
-**[PLayingWithJSON](https://github.com/RinniSwift/MOB1.3/tree/master/PlayingWithJSON/PlayingWithJSON)**
+**[PlayingWithJSON](https://github.com/RinniSwift/MOB1.3/tree/master/PlayingWithJSON/PlayingWithJSON)**
 *Working with JSON data (Feb.7)*
 1. read JSON data from a file
 2. serializing a programs internal data structure into some kind of interchange formate using decode and encode
