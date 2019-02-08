@@ -62,6 +62,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         formatter.dateFormat = "MMM d, yyyy"
         cell.festivalDate.text = formatter.string(from: fest.date)
         
+        cell.festivalNumberPeople.text = String(fest.lineup.count)
+        
         return cell
         
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4443FB1220DF1EB006ECE27 /* FestivalDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4443FB0220DF1EB006ECE27 /* FestivalDataTableViewCell.swift */; };
 		A447A8BF220D109200F2D104 /* Festival.json in Resources */ = {isa = PBXBuildFile; fileRef = A447A8BE220D109200F2D104 /* Festival.json */; };
 		A447A8C3220D15F600F2D104 /* FestivalEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = A447A8C2220D15F600F2D104 /* FestivalEntries.swift */; };
 		A4EACD2C220D0D30005D8E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EACD2B220D0D30005D8E59 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A4443FB0220DF1EB006ECE27 /* FestivalDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalDataTableViewCell.swift; sourceTree = "<group>"; };
 		A447A8BE220D109200F2D104 /* Festival.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Festival.json; sourceTree = SOURCE_ROOT; };
 		A447A8C2220D15F600F2D104 /* FestivalEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalEntries.swift; sourceTree = "<group>"; };
 		A4EACD28220D0D30005D8E59 /* PlayingWithJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayingWithJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +68,7 @@
 				A4EACD37220D0D32005D8E59 /* Info.plist */,
 				A447A8BE220D109200F2D104 /* Festival.json */,
 				A447A8C2220D15F600F2D104 /* FestivalEntries.swift */,
+				A4443FB0220DF1EB006ECE27 /* FestivalDataTableViewCell.swift */,
 			);
 			path = PlayingWithJSON;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			files = (
 				A447A8C3220D15F600F2D104 /* FestivalEntries.swift in Sources */,
 				A4EACD2E220D0D30005D8E59 /* ViewController.swift in Sources */,
+				A4443FB1220DF1EB006ECE27 /* FestivalDataTableViewCell.swift in Sources */,
 				A4EACD2C220D0D30005D8E59 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

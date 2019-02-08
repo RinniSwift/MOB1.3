@@ -12,5 +12,6 @@ class FestivalDataTableViewCell: UITableViewCell {
     
     @IBOutlet weak var festivalNameLabel: UILabel!
     @IBOutlet weak var festivalDate: UILabel!
+    @IBOutlet weak var festivalNumberPeople: UILabel!
     
 }

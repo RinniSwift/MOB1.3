@@ -49,15 +49,24 @@
                                                         <constraint firstAttribute="height" constant="40" id="Z9U-ah-o5a"/>
                                                     </constraints>
                                                 </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6e-rk-wfK">
+                                                    <rect key="frame" x="335.5" y="38" width="9.5" height="23.5"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Fri-iw-u69" firstAttribute="centerY" secondItem="h0k-Q3-lXT" secondAttribute="centerY" id="0km-Kt-C51"/>
+                                                <constraint firstItem="B6e-rk-wfK" firstAttribute="centerY" secondItem="h0k-Q3-lXT" secondAttribute="centerY" id="QpS-sg-jEQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="B6e-rk-wfK" secondAttribute="trailing" constant="15" id="ZAQ-Ub-Xbd"/>
                                                 <constraint firstItem="Fri-iw-u69" firstAttribute="leading" secondItem="h0k-Q3-lXT" secondAttribute="leadingMargin" constant="8" id="tR6-Kz-jI7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="festivalDate" destination="GTg-EI-bI0" id="lbL-ig-n0Z"/>
                                             <outlet property="festivalNameLabel" destination="phe-cH-mNO" id="Rus-C8-8hc"/>
+                                            <outlet property="festivalNumberPeople" destination="B6e-rk-wfK" id="btL-dJ-hNd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
