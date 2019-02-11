@@ -13,6 +13,11 @@
 1. implementing target-action pattern for event handling
 2. notifications with Notification Center
 
+**[leakyStarship-master](https://github.com/RinniSwift/MOB1.3/tree/master/LeakyStarship-master)**
+*Memory management and ARC (Feb.5)*
+1. using weak and unowned self for closures and variables
+2. how to debug memory leaks in Xcode
+
 **[playingWithJSON](https://github.com/RinniSwift/MOB1.3/tree/master/PlayingWithJSON/PlayingWithJSON)**
 *Working with JSON data (Feb.7)*
 1. read JSON data from a file
@@ -27,7 +32,7 @@
 *The above file demonstrates:*
 1. passing information from source view controller to destination view controller using a delegate
 
-## [ProtocolsAndDelegates.playground](https://github.com/RinniSwift/MOB1.3/blob/master/ProtocolsAndDelegates.playground/Contents.swift)
+## [protocolsAndDelegates.playground](https://github.com/RinniSwift/MOB1.3/blob/master/ProtocolsAndDelegates.playground/Contents.swift)
 *The above file demonstrates:*
 1. difference between delegates, delegators, and protocols
 2. how to label delegates, delegators, and protocols in your projects
