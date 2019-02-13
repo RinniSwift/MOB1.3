@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         
         //TODO: Call function to fetch image data here
 //        fetchNasaDailyImage()
-        fetchStarWarsAPI()
         
     }
 
@@ -78,36 +77,6 @@ class ViewController: UIViewController {
         }
     }
     
-    func fetchStarWarsAPI() {
-        let url = URL(string: "https://swapi.co/api/starships/")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        
-        let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            guard let data = data else { return }
-            guard let httpResponse = response as? HTTPURLResponse else {
-                print("response is: \(response!)")
-                return
-            }
-            guard let mime = response?.mimeType, mime == "application/json" else {
-                print("wrong mime type!")
-                return
-            }
-            
-            
-            do {
-                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
-                print(jsonObject)
-            } catch {
-                print("json error: \(error.localizedDescription)")
-            }
-        }
-        dataTask.resume()
-    }
     
 }
 

@@ -14,6 +14,9 @@
 		44649B4C220CB8BA008F8866 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44649B4A220CB8BA008F8866 /* LaunchScreen.storyboard */; };
 		44649B57220CB8BA008F8866 /* DailyPlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44649B56220CB8BA008F8866 /* DailyPlanetTests.swift */; };
 		44649B62220CB8BA008F8866 /* DailyPlanetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44649B61220CB8BA008F8866 /* DailyPlanetUITests.swift */; };
+		A4AB5BB82213B5660064DC32 /* StarWarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB5BB72213B5660064DC32 /* StarWarsViewController.swift */; };
+		A4AB5BBA2213B70A0064DC32 /* StarWarsPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB5BB92213B70A0064DC32 /* StarWarsPeopleTableViewCell.swift */; };
+		A4AB5BBC2213B8240064DC32 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB5BBB2213B8240064DC32 /* People.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		44649B5D220CB8BA008F8866 /* DailyPlanetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyPlanetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44649B61220CB8BA008F8866 /* DailyPlanetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPlanetUITests.swift; sourceTree = "<group>"; };
 		44649B63220CB8BA008F8866 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4AB5BB72213B5660064DC32 /* StarWarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsViewController.swift; sourceTree = "<group>"; };
+		A4AB5BB92213B70A0064DC32 /* StarWarsPeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsPeopleTableViewCell.swift; sourceTree = "<group>"; };
+		A4AB5BBB2213B8240064DC32 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +105,13 @@
 			children = (
 				44649B41220CB8B8008F8866 /* AppDelegate.swift */,
 				44649B43220CB8B8008F8866 /* ViewController.swift */,
+				A4AB5BB72213B5660064DC32 /* StarWarsViewController.swift */,
+				A4AB5BB92213B70A0064DC32 /* StarWarsPeopleTableViewCell.swift */,
 				44649B45220CB8B8008F8866 /* Main.storyboard */,
 				44649B48220CB8BA008F8866 /* Assets.xcassets */,
 				44649B4A220CB8BA008F8866 /* LaunchScreen.storyboard */,
 				44649B4D220CB8BA008F8866 /* Info.plist */,
+				A4AB5BBB2213B8240064DC32 /* People.swift */,
 			);
 			path = DailyPlanet;
 			sourceTree = "<group>";
@@ -256,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4AB5BB82213B5660064DC32 /* StarWarsViewController.swift in Sources */,
+				A4AB5BBA2213B70A0064DC32 /* StarWarsPeopleTableViewCell.swift in Sources */,
 				44649B44220CB8B8008F8866 /* ViewController.swift in Sources */,
 				44649B42220CB8B8008F8866 /* AppDelegate.swift in Sources */,
+				A4AB5BBC2213B8240064DC32 /* People.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
