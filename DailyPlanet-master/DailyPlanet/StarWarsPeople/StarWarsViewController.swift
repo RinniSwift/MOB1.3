@@ -10,13 +10,16 @@ import UIKit
 
 class StarWarsViewController: UIViewController {
     
-    var peopleList = [Any]()
+    var peopleList = [People]()
 
     @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         fetchStarWarsAPI()
         print(peopleList)
@@ -36,23 +39,21 @@ class StarWarsViewController: UIViewController {
             guard let httpResponse = response as? HTTPURLResponse else {
                 print("response is: \(response!)")
                 return
-            }
-            guard let mime = response?.mimeType, mime == "application/json" else {
-                print("wrong mime type!")
-                return
-            }
-            
+            }            
             
             do {
                 if let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     if let results = jsonObject["results"] as? [[String: Any]] {
-                        for resultt in results {
-                            self.peopleList.append(resultt)
-                            print(resultt["name"])
+                        for entry in results {
+                            let person = People(dict: entry)
+                            self.peopleList.append(person!)
                         }
                     }
                 }
-                
+                print(self.peopleList)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
                 
             } catch {
                 print("json error: \(error.localizedDescription)")
@@ -66,15 +67,24 @@ class StarWarsViewController: UIViewController {
 extension StarWarsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return peopleList.count
        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "peopleCell") as! StarWarsPeopleTableViewCell
+        cell.person = peopleList[indexPath.row]
+        print(peopleList[indexPath.row])
+        
         return cell
     }
     
     
+}
+
+extension StarWarsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
 }
 

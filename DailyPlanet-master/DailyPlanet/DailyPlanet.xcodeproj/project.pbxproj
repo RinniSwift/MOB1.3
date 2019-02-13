@@ -83,6 +83,7 @@
 		44649B35220CB8B8008F8866 = {
 			isa = PBXGroup;
 			children = (
+				A47EDAFC2214D10000EEEAB4 /* StarWarsPeople */,
 				44649B40220CB8B8008F8866 /* DailyPlanet */,
 				44649B55220CB8BA008F8866 /* DailyPlanetTests */,
 				44649B60220CB8BA008F8866 /* DailyPlanetUITests */,
@@ -105,13 +106,10 @@
 			children = (
 				44649B41220CB8B8008F8866 /* AppDelegate.swift */,
 				44649B43220CB8B8008F8866 /* ViewController.swift */,
-				A4AB5BB72213B5660064DC32 /* StarWarsViewController.swift */,
-				A4AB5BB92213B70A0064DC32 /* StarWarsPeopleTableViewCell.swift */,
 				44649B45220CB8B8008F8866 /* Main.storyboard */,
 				44649B48220CB8BA008F8866 /* Assets.xcassets */,
 				44649B4A220CB8BA008F8866 /* LaunchScreen.storyboard */,
 				44649B4D220CB8BA008F8866 /* Info.plist */,
-				A4AB5BBB2213B8240064DC32 /* People.swift */,
 			);
 			path = DailyPlanet;
 			sourceTree = "<group>";
@@ -132,6 +130,16 @@
 				44649B63220CB8BA008F8866 /* Info.plist */,
 			);
 			path = DailyPlanetUITests;
+			sourceTree = "<group>";
+		};
+		A47EDAFC2214D10000EEEAB4 /* StarWarsPeople */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB5BB72213B5660064DC32 /* StarWarsViewController.swift */,
+				A4AB5BB92213B70A0064DC32 /* StarWarsPeopleTableViewCell.swift */,
+				A4AB5BBB2213B8240064DC32 /* People.swift */,
+			);
+			path = StarWarsPeople;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
