@@ -31,6 +31,12 @@
 3. creating coding keys to match names of the JSON data
 4. using decode to read data that match the coding keys.
 
+**[dailyPlanet-master](https://github.com/RinniSwift/MOB1.3/tree/master/DailyPlanet-master)**
+*API requests (Feb.12)*
+1. creating a default urlSessionConfiguration. (behaves like a shared session but allows more configuration and allows to obtain data incrementally with a delegate)
+2. URLRequest to the url online.
+3. creating a dataTask to send and recieve data using NSObjects (short and interactive requests)
+
 ## [delegates-starter-master](https://github.com/RinniSwift/MOB1.3/tree/master/delegates-starter-master)
 *The above file demonstrates:*
 1. passing information from source view controller to destination view controller using a completion handler
