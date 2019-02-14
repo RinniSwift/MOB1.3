@@ -11,6 +11,7 @@ import UIKit
 class StarWarsViewController: UIViewController {
     
     var peopleList = [People]()
+    var pageNumber = 1
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,7 +27,7 @@ class StarWarsViewController: UIViewController {
     }
     
     func fetchStarWarsAPI() {
-        let url = URL(string: "https://swapi.co/api/people")!
+        let url = URL(string: "https://swapi.co/api/people/?page=\(pageNumber)")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
@@ -79,6 +80,12 @@ extension StarWarsViewController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == peopleList.count - 1 {
+            pageNumber += 1
+            fetchStarWarsAPI()
+        }
+    }
     
 }
 
