@@ -36,7 +36,8 @@
 1. creating a default urlSessionConfiguration. (behaves like a shared session but allows more configuration and allows to obtain data incrementally with a delegate)
 2. URLRequest to the url online.
 3. creating a dataTask to send and recieve data using NSObjects (short and interactive requests)
-4. deserializing binary data to json data. guarding the mime(responses originated source) type to be: 'applicatio/json'. a json type.
+4. deserializing binary data to json data. 
+5. pagination for fetching data with links.
 
 ## [delegates-starter-master](https://github.com/RinniSwift/MOB1.3/tree/master/delegates-starter-master)
 *The above file demonstrates:*
