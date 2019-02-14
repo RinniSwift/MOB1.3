@@ -10,9 +10,11 @@ import UIKit
 
 class StarWarsViewController: UIViewController {
     
+    // MARK: - Variables
     var peopleList = [People]()
     var pageNumber = 1
 
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -23,7 +25,6 @@ class StarWarsViewController: UIViewController {
         tableView.dataSource = self
         
         fetchStarWarsAPI()
-        print(peopleList)
     }
     
     func fetchStarWarsAPI() {
@@ -37,10 +38,6 @@ class StarWarsViewController: UIViewController {
                 return
             }
             guard let data = data else { return }
-            guard let httpResponse = response as? HTTPURLResponse else {
-                print("response is: \(response!)")
-                return
-            }            
             
             do {
                 if let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
@@ -51,18 +48,15 @@ class StarWarsViewController: UIViewController {
                         }
                     }
                 }
-                print(self.peopleList)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-                
             } catch {
                 print("json error: \(error.localizedDescription)")
             }
         }
         dataTask.resume()
     }
-    
 }
 
 extension StarWarsViewController: UITableViewDataSource {
@@ -79,6 +73,9 @@ extension StarWarsViewController: UITableViewDataSource {
         
         return cell
     }
+}
+
+extension StarWarsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == peopleList.count - 1 {
@@ -91,9 +88,6 @@ extension StarWarsViewController: UITableViewDataSource {
         }
     }
     
-}
-
-extension StarWarsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
