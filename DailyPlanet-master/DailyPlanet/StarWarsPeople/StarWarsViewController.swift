@@ -82,8 +82,12 @@ extension StarWarsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == peopleList.count - 1 {
-            pageNumber += 1
-            fetchStarWarsAPI()
+            if pageNumber < 9 {
+                pageNumber += 1
+                DispatchQueue.main.async {
+                    self.fetchStarWarsAPI()
+                }
+            }
         }
     }
     
