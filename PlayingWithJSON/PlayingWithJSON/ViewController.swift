@@ -24,8 +24,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d, yyyy"
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "MMM d, yyyy"
         
         
         let path = Bundle.main.path(forResource: "Festival", ofType: ".json")
@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print(url)
             let contents = try? Data(contentsOf: url, options: .alwaysMapped)
             let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .formatted(formatter)
+//            decoder.dateDecodingStrategy = .formatted(formatter)
             if let data = contents,
                 let festivalsFromJSON = try? decoder.decode([Festivall].self, from: data) {
                 festivals = festivalsFromJSON
@@ -45,8 +45,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
     }
-
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return festivals.count
@@ -55,18 +53,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "festivalCell", for: indexPath) as! FestivalDataTableViewCell
         let fest = festivals[indexPath.row]
-        print(fest)
-        cell.festivalNameLabel.text = fest.name
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d, yyyy"
-        cell.festivalDate.text = formatter.string(from: fest.date)
-        
-        cell.festivalNumberPeople.text = String(fest.lineup.count)
-        
+        cell.festival = fest
         return cell
-        
     }
-
 }
 

@@ -14,23 +14,25 @@ struct Participant: Codable {
     let id: String
 }
 
-struct City: Codable {
-    let name: String
-    let id: String
-}
-
-enum FestivalType: String, Codable {
-    case music
-    case food
-    case cinema
-}
+// NOT NECESSARY
+//struct City: Codable {
+//    let name: String
+//    let id: String
+//}
+//
+//enum FestivalType: String, Codable {
+//    case music
+//    case food
+//    case cinema
+//}
 
 struct Festivall: Codable {
-    let date: Date
+    let date: String
     let name: String
-    let city: City
     let lineup: [Participant]
-    let type: FestivalType
+//    let type: FestivalType
+//    let city: City
+
 }
 
 
