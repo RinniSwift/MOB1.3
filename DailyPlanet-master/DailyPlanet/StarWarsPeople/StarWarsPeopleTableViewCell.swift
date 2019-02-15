@@ -22,5 +22,4 @@ class StarWarsPeopleTableViewCell: UITableViewCell {
             genderLabel.text = "Gender: \(person.gender)"
         }
     }
-    
 }
