@@ -23,6 +23,7 @@
 1. read JSON data from a file
 2. serializing a programs internal data structure into some kind of interchange formate using decode and encode
 3. creating types conformin to the Codeable protocol (this allows us to create an encoder and decoder)
+4. using convenient init to set the cells data.
 
 **[product hunt](https://github.com/RinniSwift/Product-Hunt)**
 *API requests (Feb.11)*
@@ -30,6 +31,7 @@
 2. setting up the network manager
 3. creating coding keys to match names of the JSON data
 4. using decode to read data that match the coding keys.
+5. setting UIImageView from data of a url using URLSession.shared.dataTask(with: )
 
 **[dailyPlanet-master](https://github.com/RinniSwift/MOB1.3/tree/master/DailyPlanet-master)**
 *API requests (Feb.12)*
