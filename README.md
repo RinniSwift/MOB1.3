@@ -41,6 +41,11 @@
 4. deserializing binary data to json data. 
 5. pagination for fetching data with links.
 
+**[lesson10](https://github.com/RinniSwift/MOB1.3/tree/master/Lesson10-master)**
+*Networking requests mainly post and get (Feb.26)*
+1. creating a get and post for the url portion
+2. using the Alamofire networking library to use get and post
+
 ## [delegates-starter-master](https://github.com/RinniSwift/MOB1.3/tree/master/delegates-starter-master)
 *The above file demonstrates:*
 1. passing information from source view controller to destination view controller using a completion handler
