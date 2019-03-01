@@ -95,6 +95,7 @@ class ItemContactInfoViewController: UIViewController {
         // write data to storage
         uploadProfileImage(item.itemImage, key: key!) { url in
             print("url is: \(url!)")
+            userRef.child("items").child(key!).updateChildValues(["imageurl" : url?.absoluteString])
         }
         
 //        performSegue(withIdentifier: "unwind from saving new item", sender: nil)
