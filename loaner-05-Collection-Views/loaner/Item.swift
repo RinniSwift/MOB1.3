@@ -13,6 +13,7 @@ import Contacts.CNContact
 struct Item {
     var itemTitle: String
     var notes: String = ""
+    var imageUrl: String?
     var itemImage: UIImage = UIImage(named: "no item image")!
     var loanee: Loanee? = nil
     
@@ -20,10 +21,10 @@ struct Item {
         self.itemTitle = itemTitle
     }
     
-    init(itemTitle: String, notes: String, itemImage: UIImage, loanee: Loanee?) {
+    init(itemTitle: String, notes: String, itemImage: String, loanee: Loanee?) {
         self.itemTitle = itemTitle
         self.notes = notes
-        self.itemImage = itemImage
+        self.imageUrl = itemImage
         self.loanee = loanee
     }
     
@@ -66,6 +67,11 @@ struct Loanee {
     init(name: String, profileImage: UIImage, contactNumber: String?) {
         self.name = name
         self.profileImage = profileImage
+        self.contactNumber = contactNumber
+    }
+    
+    init(name: String, contactNumber: String?) {
+        self.name = name
         self.contactNumber = contactNumber
     }
     

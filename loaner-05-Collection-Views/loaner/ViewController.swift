@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
     
@@ -107,6 +108,28 @@ class ViewController: UIViewController {
         flow.itemSize = CGSize(width: screenSize.width / 2 - horizontalPadding * 2, height: screenSize.width / 2 - verticalPadding * 2)
         flow.sectionInset = UIEdgeInsets(top: verticalPadding, left: horizontalPadding, bottom: verticalPadding, right: horizontalPadding)
         collectionView.collectionViewLayout = flow
+        
+        
+        
+        var userRef = Database.database().reference().child("items")
+        userRef.observe(DataEventType.value, with: { snapshot in
+            self.items = []
+            let postDict = snapshot.value as? [String: AnyObject] ?? [:]
+            for rest in postDict {
+                guard let restDict = rest.value as? [String: String] else { continue }
+                guard let name = restDict["name"],
+                    let notes = restDict["notes"],
+                    let url = restDict["imageurl"],
+                    let loanee = restDict["loanee"] else { return }
+                
+                let person = Loanee(name: "", contactNumber: "")
+                let item = Item(itemTitle: name, notes: notes, itemImage: url, loanee: person)
+                self.items.append(item)
+                
+            }
+            self.collectionView.reloadData()
+        })
+        
     }
 }
 
@@ -121,6 +144,14 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         
         let item = items[indexPath.row]
         cell.configure(item)
+        
+        do {
+            cell.imageView.image = UIImage(data: try! Data(contentsOf: URL(string: item.imageUrl!)!))
+        } catch {
+            print("error adding image to cell image")
+        }
+        
+        
         
         return cell
     }
