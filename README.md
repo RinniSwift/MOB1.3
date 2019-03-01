@@ -50,6 +50,7 @@
 *Firebase app (Feb.28)*
 1. saving data to the real time data base
 2. saving data to the storage
+3. retrieving data from the data base and displaying data on collection view cell
 
 ## [delegates-starter-master](https://github.com/RinniSwift/MOB1.3/tree/master/delegates-starter-master)
 *The above file demonstrates:*
